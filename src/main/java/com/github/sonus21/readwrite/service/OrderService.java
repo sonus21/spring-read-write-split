@@ -21,7 +21,7 @@ public class OrderService {
     }
 
     public CreateOrderResponse createOrder(CreateOrderRequest request) {
-        Order order = Order.builder().merchantOrderId(request.getMerchantOrderId()).merchantId(request.getMerchantId()).amount(request.getAmount()).currency(request.getCurrency()).trackingId(UUID.randomUUID().toString()).build();
+        Order order = Order.builder().userId(request.getUserId()).merchantOrderId(request.getMerchantOrderId()).merchantId(request.getMerchantId()).amount(request.getAmount()).currency(request.getCurrency()).trackingId(UUID.randomUUID().toString()).build();
         orderRepository.save(order);
         return buildResponse(order);
     }
