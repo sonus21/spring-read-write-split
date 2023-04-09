@@ -36,6 +36,13 @@ public class Order {
     @Column(name = "user_id")
     private String userId;
 
+    @Column(name = "amount")
+    private Double amount;
+
+    @Column(name = "currency")
+    @Convert(converter = CurrencyCodeAttributeConverter.class)
+    private CurrencyCode currency;
+
     @CreationTimestamp
     @Column(name = "created_at")
     private Instant createdAt;
@@ -43,11 +50,4 @@ public class Order {
     @UpdateTimestamp
     @Column(name = "updated_at")
     private Instant updatedAt;
-
-    @Column(name = "amount")
-    private Double amount;
-
-    @Column(name = "currency")
-    @Convert(converter = CurrencyCodeAttributeConverter.class)
-    private CurrencyCode currency;
 }
