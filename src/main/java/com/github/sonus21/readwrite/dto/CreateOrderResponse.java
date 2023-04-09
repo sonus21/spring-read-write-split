@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class CreateOrderResponse extends BaseDto {
+public class CreateOrderResponse extends BaseResponseDto {
     private Long id;
     private String trackingId;
     private String merchantId;
